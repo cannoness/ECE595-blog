@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blog application for ECE595 Web Architecture Class.
 
-Things you may want to cover:
+Blog Roles:
 
-* Ruby version
+ * Follower
+   Receives email notification of public blog post
+   No user information stored other than email   
 
-* System dependencies
+ * Guest
+   Guest comment post access does not require use of email address
+   Guest can post comment
+   Guest cannot edit or delete comment after it is posted
+   No user information stored   
 
-* Configuration
+ * User
+   User has a user id that is unique to themselves
+   User can post a comment
+   User can deleted their own comment
+   User can edit their own comment
+   User informaton stored is email address, username, password
 
-* Database creation
+ * Author
+   Author is able to post blog posts and comments
+   Author is able to edit or delete own blog posts and comments
+   Author can view own private posts
+   Author information stored is same as user with post privilages
 
-* Database initialization
+ * Moderator
+   Moderator can view all posts, public and private
+   Moderator can edit all posts, all comments, and all users
+   Moderator has ability to delete all posts, comments, and users
+   Moderator has same information stored as a user
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   
