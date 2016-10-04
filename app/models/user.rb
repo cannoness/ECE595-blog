@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  rolify
-   has_many :comments
-   has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  validates_presence_of :email
 end
