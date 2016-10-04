@@ -1,4 +1,6 @@
 <%= div_for @post do %>
-   <h2><%= h(@post.title) %></h2>
-   <%= simple_format h(@post.body) %>
+  <h1><%= h(@post.title) %></h1>
+  <h2 align="right"><%= h(@post.user.email) %></h2>
+  <br/>
+  <%= simple_format h(@post.body) %>
 <% end %>
