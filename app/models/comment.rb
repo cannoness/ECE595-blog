@@ -1,4 +1,5 @@
 class Comment < ApplicationRecord
+  resourcify
   belongs_to :user
   belongs_to :post
   validates_presence_of :post_id
