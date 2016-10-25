@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   after_create :assign_default_role
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

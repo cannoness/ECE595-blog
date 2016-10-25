@@ -1,22 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-
-
+<div id="posts">
 <%= render @post %>
+</div>
 
-<h2> Comments </h2>
 <div id="comments">
+<h2> Comments </h2>
   <%= render @post.comments.reverse %>
 </div>
 
-<%= form_for [@post, Comment.new], remote: true do |f| %>
+<div id="new_comment">
+<%= form_for [@post, Comment.new],remote: true do |f| %>
+<%= token_tag(nil) %>
    <p>
-       <%= f.label :body, "New Comment" %><br />
-       <%= f.text_area :body %>
+   <%= f.label :body, "New Comment" %> </h2><br />
+   <%= f.label :user_id, "User Id" %></h4><br />
+   <%= f.text_field :user_id %><br />
+   <%= f.label :user_id, "Body" %></h4><br />
+   <%= f.text_area :body %>
    </p>
-   <p><%= f.submit "Add comment" %> </p>
+
+   <p><%= f.submit "Add Comment" %> </p>
 <% end %>
-
-
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</div>

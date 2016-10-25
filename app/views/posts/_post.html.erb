@@ -1,6 +1,6 @@
 <%= div_for @post do %>
   <h1><%= h(@post.title) %></h1>
-  <h2 align="right"><%= h(@post.user.email) %></h2>
+  <h3 align="left">Posted by <%= h(@post.user.email) %> on <%= @post.created_at %></h3>
   <br/>
-  <%= simple_format h(@post.body) %>
+  <div id="post_body"><%= simple_format h(@post.body) %></div>
 <% end %>
