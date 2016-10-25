@@ -1,4 +1,9 @@
 class PostPolicy < ApplicationPolicy
+   class Scope < Scope
+    def resolve
+      scope
+    end
+   end
   def create?
     user.has_role? :admin or user.has_role? :moderator
   end   
