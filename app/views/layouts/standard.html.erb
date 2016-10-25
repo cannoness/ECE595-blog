@@ -1,11 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<%= csrf_meta_tag %>
 <!-- tutorial followed from https://www.tutorialspoint.com/ruby-on-rails/rails-layouts.htm -->
 <html>
 
    <head>
       <title>ECE-595 Blog Application</title>
       <%= stylesheet_link_tag "style" %>
+      <%= csrf_meta_tags %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ 
    </head>
 
    <body id = "posts">
@@ -20,7 +22,6 @@
             <%= yield -%>
          </div>
 
-         <div id = "sidebar"></div>
          
       </div>
    </body>

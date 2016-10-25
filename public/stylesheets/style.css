@@ -3,6 +3,8 @@ body {
    font-size: small;
    font-color: #000;
    background-color: #ccc;
+   background-image: url('http://i0.kym-cdn.com/entries/icons/original/000/004/599/kittyloaf2.gif');
+   background-repeat: repeat;
 }
 
 a:link, a:active, a:visited {
