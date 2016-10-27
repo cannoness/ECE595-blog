@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+   if params[:redirect_to].present?
+     store_location_for(resource, params[:redirect_to])    
+  end
   end
 
   def create

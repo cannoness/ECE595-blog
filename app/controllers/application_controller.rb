@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
         session["current_user"] = session["current_user"] || current_user.id if current_user
     end
     def after_sign_in_path_for(resource)
-        cookies[:login] = { :value => current_user.email, :expires => Time.now + 2.weeks}
+        posts_path
+        #cookies[:login] = { :value => current_user.email, :expires => Time.now + 2.weeks}
     end
 end
