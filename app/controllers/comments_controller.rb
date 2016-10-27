@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_post
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
@@ -24,7 +25,6 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-      @post = Post.find(params[:post_id])
       @comment = @post.comments.create(comment_params)
 
       respond_to do |format|
@@ -67,6 +67,9 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+    end
+    def set_post
+      @post = Post.find(params[:post_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
